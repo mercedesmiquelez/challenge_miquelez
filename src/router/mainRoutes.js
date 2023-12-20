@@ -3,13 +3,18 @@ const router = express.Router();
 
 const {
   homeView,
-  contactView,
   aboutView,
   faqsView,
 } = require('../controllers/mainControllers');
 
+
+router.get('/contact', (req, res) => {
+  
+  res.redirect('https://linktr.ee/funkooshop');
+});
+
+
 router.get('/', homeView);
-router.get('/contact', contactView);
 router.get('/about', aboutView);
 router.get('/faqs', faqsView);
 
