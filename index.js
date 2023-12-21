@@ -1,3 +1,5 @@
+//Inicio del index devlarando las const
+
 const express = require('express');
 const app = express();
 const path = require('path');
