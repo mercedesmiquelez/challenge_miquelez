@@ -17,3 +17,9 @@ Este es un proyecto como parte del challenge integrador para el curso de NodeJS 
 - MySQL
 
 __Autor/a:__ Pepe Grillo
+
+__Integrantes:__ 
+- Francisco Gallardo
+- Mercedes Miquelez 
+- Marcelo Baranowski 
+- Juan Urman
