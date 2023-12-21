@@ -5,7 +5,7 @@ const methodOverride = require('method-override');
 const { initSession } = require('./src/utils/sessions');
 require('dotenv').config();
 
-/* Import de la rutas */
+// Import de la rutas 
 
 const mainRoutes = require('./src/router/mainRoutes');
 const shopRoutes = require('./src/router/shopRoutes');
@@ -15,11 +15,11 @@ const { notFoundPage } = require('./src/utils/errorHandlers');
 
 const PORT = process.env.PORT || 3000;
 
-/* Define carpeta de archivos estáticos */
+// Define carpeta de archivos estáticos 
 
 app.use(express.static(path.resolve(__dirname, "public")));
 
-/* User Session */
+// User Session 
 
 app.use(initSession());
 app.use((req, res, next) => {
@@ -27,20 +27,21 @@ app.use((req, res, next) => {
   next();
 });
 
-/* Configuración del Template Engine - EJS */
+// Configuración del Template Engine - EJS 
 
 app.set('view engine', 'ejs');
 app.set('views', path.resolve(__dirname, "./src/views"));
 
-/* Parsea los datos recibidos por POST */
+// Parsea los datos recibidos por POST
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-/* Override para habilitar métodos PUT y DELETE */
+// Override para habilitar métodos PUT y DELETE
+
 app.use(methodOverride('_method'));
 
-/* Rutas de la aplicación */
+// Rutas de la aplicación
 
 app.use('/', mainRoutes);
 app.use('/shop', shopRoutes);
