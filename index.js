@@ -34,7 +34,7 @@ app.set('views', path.resolve(__dirname, "./src/views"));
 
 /* Parsea los datos recibidos por POST */
 
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 /* Override para habilitar métodos PUT y DELETE */
